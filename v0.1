@@ -1,0 +1,28 @@
+#include <bits/stdc++.h>
+using namespace std;
+int main()
+{
+    cout << "Koks jusu vardas" << endl;
+    string vardas;
+    cin >> vardas;
+    string Sveikas = " Sveikas, ";
+    string bendras;
+    bendras+="*";
+    bendras+= Sveikas + vardas;
+    bendras+= "! ";
+    bendras+="*";
+    int skc=0;
+    skc = bendras.size();
+    string pirma;
+    string antra;
+    for(int i=0; i < skc; i++)
+        pirma+="*";
+    for(int i=0; i <skc; i++)
+    {
+        if(i==0 || i == skc-1)
+             antra+="*";
+        else antra+= " ";
+    }
+    cout << pirma << endl << antra << endl << bendras << endl << antra << endl << pirma;
+    return 0;
+}
