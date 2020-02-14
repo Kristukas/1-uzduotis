@@ -1,0 +1,59 @@
+#include <bits/stdc++.h>
+#include <string>
+using namespace std;
+struct uzd1
+{
+    string eil1, eil2, eil3, vardas, sveikas;
+    int plotis;
+        uzd1()
+        {
+          cout << "Koks jusu vardas?" << endl;
+          cin >> vardas;
+          if(vardas.back()=='s' || vardas.back()=='S') //Patikriname ar vyras ar moteris
+                sveikas = "Sveikas, ";
+          else sveikas = "Sveika, ";
+          cout << "Iveskite eiluciu skaiciu: ";
+          cin >> plotis;
+          while(1)
+          {
+          if(cin.fail()) //Tikrinam ar i int ivestas skaicius
+          {
+              cin.clear();
+              cin.ignore(numeric_limits<streamsize>::max(), '\n');
+              cout << "KLAIDA. Iveskite tinkama skaiciu ";
+              cin >> plotis;
+          }
+          else break;
+          }
+          if(plotis < 3)
+                plotis = 3; //Plotis negali but mazesnis uz 3 nes pats sveikinimas uzima 3 eilutes
+          eil3 += "* " + sveikas + vardas + "!" + " *";
+          int bendras = eil3.size(); // Randame eilutes ilgi
+          for(int i=0; i < bendras; i++)
+            eil1+="*";
+            cout << eil1 << endl;
+            for(int i=0; i <bendras; i++)
+            {
+                if(i==0 || i == bendras-1)
+                     eil2+="*";
+                else eil2+= " ";
+            }
+            if((plotis-3)%2!=0) //Tikriname ar parasytas plotas (neskaintant 3 sveikinimo eiluciu) padalinus is 2 neturi liekanos
+            {
+                 for(int i=0; i<(plotis-2)/2; i++) // Jei liekana yra, tada vienoje puseje turi buti daugiau eiluciu nei kitone, nes yra lyginis eiluciu skaicius
+                cout << eil2 << endl;
+            }
+            else  for(int i=0; i<(plotis-3)/2; i++)
+                cout << eil2 << endl;
+            cout << eil3 << endl;
+             for(int i=0; i<(plotis-3)/2; i++)
+                cout << eil2 << endl;
+            cout << eil1;
+
+        }
+};
+int main()
+{
+   uzd1 pratimas;
+   return 0;
+}
