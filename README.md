@@ -1,2 +1,2 @@
 # 1 uzduotis
-v0.1 dfvsdfvsds
+v0.1 
